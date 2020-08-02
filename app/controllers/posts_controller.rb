@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with name: "Alex", password: "123", except: [:index, :show]
+  # http_basic_authenticate_with name: "Alex", password: "123", except: [:index, :show]
 
   # GET /posts
   def index
