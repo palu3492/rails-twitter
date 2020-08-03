@@ -3268,3 +3268,411 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 152ms (Views: 136.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for ::1 at 2020-08-02 19:20:23 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "72796f459775389aa68345c501bcd11b906984e9"], ["LIMIT", 1]]
+Completed 200 OK in 147ms (Views: 130.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/sign_out" for ::1 at 2020-08-02 19:21:12 -0500
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "72796f459775389aa68345c501bcd11b906984e9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["updated_at", "2020-08-03 00:21:12.826622"], ["id", 1]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 26ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/sign_in" for ::1 at 2020-08-02 19:21:12 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (2.1ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 247ms (Views: 245.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for ::1 at 2020-08-02 19:21:16 -0500
+Processing by Clearance::UsersController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/_form.html.erb (1.6ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 275ms (Views: 273.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-08-02 19:21:20 -0500
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"palu3492@stthomas.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "palu3492@stthomas.edu"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/_form.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 522ms (Views: 224.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2020-08-02 19:21:27 -0500
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"palu3492@stthomas.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "palu3492@stthomas.edu"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/_form.html.erb (1.1ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 530ms (Views: 229.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2020-08-02 19:21:33 -0500
+Processing by Clearance::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (1.7ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 230ms (Views: 230.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2020-08-02 19:21:42 -0500
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"palu3492@stthomas.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "palu3492@stthomas.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 324ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-08-02 19:21:43 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 130ms (Views: 116.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-02 19:21:47 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 124.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:21:48 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 127ms (Views: 113.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:37:39 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 157ms (Views: 142.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:38:07 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 142.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:38:22 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 134ms (Views: 120.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:39:24 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 126.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:40:11 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 159ms (Views: 145.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:40:37 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 123.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:41:17 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 150ms (Views: 134.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:42:32 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 138ms (Views: 122.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:44:13 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 131ms (Views: 118.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:44:22 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 141ms (Views: 125.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:44:28 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 135ms (Views: 122.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 19:45:47 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 164ms (Views: 149.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 21:01:26 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 259ms (Views: 244.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 21:23:17 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 214ms (Views: 199.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 21:39:44 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 165ms (Views: 150.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-02 21:40:17 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 200ms (Views: 186.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 08:31:17 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 343ms (Views: 315.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 08:36:41 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 210ms (Views: 194.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 08:38:17 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 143ms (Views: 129.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 08:40:17 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 204ms (Views: 189.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:00:50 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 164ms (Views: 152.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:01:58 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 150ms (Views: 136.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:02:21 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 132.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:03:04 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 153ms (Views: 137.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:04:14 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 215ms (Views: 197.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:05:13 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 208ms (Views: 194.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:05:26 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 209ms (Views: 190.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:05:34 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 235ms (Views: 218.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:06:14 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 216ms (Views: 199.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:07:13 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 214ms (Views: 198.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:07:57 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 205ms (Views: 184.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:08:13 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 214ms (Views: 198.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-08-03 09:10:25 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 171ms (Views: 142.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-08-03 09:10:26 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "d35fa2e4b78e0fdc607dcafa1ad716ee8934bfef"], ["LIMIT", 1]]
+Completed 200 OK in 154ms (Views: 140.1ms | ActiveRecord: 0.5ms)
+
+
