@@ -2,8 +2,10 @@
   <h5 class="page-title">Home</h5>
 </div>
 
-<% @posts.each do |post| %>
-  <%= link_to post_path(post) do %>
+<%= render 'tweets/new' %>
+
+<% @tweets.each do |post| %>
+  <%= link_to tweet_path(post) do %>
   <div>
     <h5><%= post.title %></h5>
     <p><%= post.body %></p>

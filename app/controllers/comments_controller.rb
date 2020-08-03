@@ -3,16 +3,16 @@ class CommentsController < ApplicationController
   # http_basic_authenticate_with name: "Alex", password: "123", only: [:destroy]
 
   def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
-    redirect_to post_path(@post)
+    @tweet = Tweet.find(params[:post_id])
+    @comment = @tweet.comments.create(comment_params)
+    redirect_to tweet_path(@tweet)
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
+    @tweet = Tweet.find(params[:post_id])
+    @comment = @tweet.comments.find(params[:id])
     @comment.destroy
-    redirect_to post_path(@post)
+    redirect_to tweet_path(@tweet)
   end
 
   private def comment_params

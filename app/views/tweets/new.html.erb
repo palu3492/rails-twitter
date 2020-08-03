@@ -1,11 +1,6 @@
-<h3>Edit post</h3>
+<h3>Add new post</h3>
 
-<!--won't work with redirect-->
-<% flash.each do |k, v| %>
-  <div id="<%= k %>"><%= v %></div>
-<% end %>
-
-<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+<%= form_for :tweet, url: tweets_path do |f| %>
   <p>
     <%= f.label :title %> <br/>
     <%= f.text_field :title %>
