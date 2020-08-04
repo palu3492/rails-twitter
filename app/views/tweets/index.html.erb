@@ -4,11 +4,10 @@
 
 <%= render 'tweets/new' %>
 
-<% @tweets.each do |post| %>
-  <%= link_to tweet_path(post) do %>
+<% @tweets.each do |tweet| %>
+  <%= link_to tweet_path(tweet) do %>
   <div>
-    <h5><%= post.title %></h5>
-    <p><%= post.body %></p>
+    <p><%= tweet.body %></p>
   </div>
 <% end %>
 <% end %>

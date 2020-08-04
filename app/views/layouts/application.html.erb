@@ -11,51 +11,41 @@
   </head>
 
   <body>
-
-  <!--
-      <p class="navbar-brand" style="margin: 0; margin-right: 1em;"><%= link_to "Not Twitter", home_path %></p>
-
-
-      <div id="flash">
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
+    <div id="content" class="d-flex" style="height: 100vh">
+      <div class="centering-sidebar"></div>
+      <!-- Sidebar -->
+      <div id="nav">
+        <ul class="navbar-nav mr-auto">
+          <li><%= link_to "Home", home_path %></li>
+          <li><%= link_to "Tweet", new_tweet_path %></li>
+          <li><%= link_to "About", about_path %></li>
+          <li>
+            <% if signed_in? %>
+              <p>Signed in as:</p>
+              <p><%= current_user.name %></p>
+              <p><%= current_user.username %></p>
+              <%= button_to 'Sign out', sign_out_path, method: :delete %>
+            <% else %>
+              <%= link_to 'Sign in', sign_in_path %>
+            <% end %>
+          </li>
+        </ul>
       </div>
-
-  -->
-
-
-
-  <div id="content" class="d-flex" style="height: 100vh">
-    <div class="centering-sidebar"></div>
-    <!-- Sidebar -->
-    <div id="nav">
-      <ul class="navbar-nav mr-auto">
-        <li><%= link_to "Home", tweets_path %></li>
-        <li><%= link_to "Tweet", new_tweet_path %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li>
-          <% if signed_in? %>
-            <p>Signed in as:</p>
-            <p><%= current_user.name %></p>
-            <p><%= current_user.username %></p>
-            <%= button_to 'Sign out', sign_out_path, method: :delete %>
-          <% else %>
-            <%= link_to 'Sign in', sign_in_path %>
+      <!-- Content -->
+  <!--    Max width 600px-->
+      <div id="main">
+        <%= yield %>
+      </div>
+      <!-- Sidebar -->
+  <!--    width 350px-->
+      <div id="side">
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <div class="flash <%= key %>"><%= value %></div>
           <% end %>
-        </li>
-      </ul>
+        </div>
+      </div>
+      <div class="centering-sidebar"></div>
     </div>
-    <!-- Content -->
-<!--    Max width 600px-->
-    <div id="main">
-      <%= yield %>
-    </div>
-    <!-- Sidebar -->
-<!--    width 350px-->
-    <div id="side"></div>
-    <div class="centering-sidebar"></div>
-  </div>
-
   </body>
 </html>
