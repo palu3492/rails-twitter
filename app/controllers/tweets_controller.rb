@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
 
   # GET /tweets/new
   def new
-    
+
   end
 
   # POST /tweets
@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
     else
       # flash does not work when using redirect, need to use render
       # flash.now[:alert] = "Posts need to be between 1 and 280 characters"
-      redirect_to home_path(@tweet)
+      redirect_to home_path
     end
   end
 
@@ -54,6 +54,6 @@ class TweetsController < ApplicationController
   end
 
   private def post_params
-    params.require(:tweet).permit(:title, :body)
+    params.require(:tweet).permit(:body)
   end
 end

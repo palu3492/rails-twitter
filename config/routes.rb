@@ -5,11 +5,6 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about', as: 'about'
 
-  resources :users do
-    resources :tweets
-      resources :comments
-  end
-
   resources :tweets do
     resources :comments
   end
@@ -25,16 +20,17 @@ Rails.application.routes.draw do
             only: [:create, :new]
 
   resource :session,
-           controller: 'clearance/sessions',
+           controller: 'sessions',
            only: [:create]
 
   resources :users,
-            controller: 'clearance/users',
+            controller: 'users',
             only: Clearance.configuration.user_actions do
-    resource :password,
-             controller: 'clearance/passwords',
-             only: [:edit, :update]
-  end
+              resource :password,
+                       controller: 'clearance/passwords',
+                       only: [:edit, :update]
+            resources :tweets
+            end
 
   get '/sign_in' => 'sessions#new'
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'
